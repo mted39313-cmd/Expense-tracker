@@ -28,6 +28,7 @@ export function convertCurrency(amount, fromCurrency, toCurrency, rates) {
  * @param {Object} rates - Dictionary of exchange rates
  * @returns {number} Total sum in home currency
  */
+
 export function calculateTotal(expenses, homeCurrency, rates) {
   if (!expenses || expenses.length === 0) return 0;
   
