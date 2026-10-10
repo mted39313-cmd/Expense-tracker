@@ -1,4 +1,4 @@
-import { convertCurrency, calculateTotal, filterExpenses } from '../src/utils.js';
+import { convertCurrency, calculateTotal, filterExpenses } from './src/utils.js';
 
 describe('Utility Functions Unit Tests', () => {
   // Mock exchange rates dictionary for testing math logic offline
@@ -14,6 +14,7 @@ describe('Utility Functions Unit Tests', () => {
     expect(converted).toBe(1.00);
   });
 
+  
   test('convertCurrency returns original amount if rates are missing (edge case)', () => {
     const amount = 50;
     // 'XXX' is an invalid currency code not present in mockRates
