@@ -1,13 +1,13 @@
 {
   "name": "expense-tracker",
   "version": "1.0.0",
-  "type": "module", /* Tells Node.js to treat files as ES modules (enables import/export) */
+  "type": "module", 
   "scripts": {
-    "test": "NODE_OPTIONS=--experimental-vm-modules jest", /* Command to run Jest unit tests with ES module support */
-    "lint": "eslint src/ tests/" /* Command to run ESLint static analysis across source and test directories */
+    "test": "NODE_OPTIONS=--experimental-vm-modules jest", 
+    "lint": "eslint src/ tests/" 
   },
   "devDependencies": {
-    "eslint": "^8.57.0", /* Linter package for checking code style and errors */
-    "jest": "^29.7.0" /* Testing framework package */
+    "eslint": "^8.57.0", 
+    "jest": "^29.7.0" 
   }
 }
