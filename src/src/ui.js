@@ -26,6 +26,7 @@ export function renderApp(state, handlers) {
     return;
   }
 
+
   // Compute filtered expenses and total spending for dashboard display
   const filtered = filterExpenses(state.expenses, state.selectedCategory);
   const total = calculateTotal(state.expenses, state.homeCurrency, state.rates);
@@ -44,6 +45,7 @@ export function renderApp(state, handlers) {
       </div>
     </header>
 
+    
     <section class="form-section">
       <form id="expense-form">
         <input type="text" id="description" placeholder="Description (e.g. Coffee)" required />
