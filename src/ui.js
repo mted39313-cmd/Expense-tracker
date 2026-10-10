@@ -27,7 +27,6 @@ export function renderApp(state, handlers) {
     return;
   }
 
-
   // Compute filtered expenses and total spending for dashboard display
   const filtered = filterExpenses(state.expenses, state.selectedCategory);
   const total = calculateTotal(state.expenses, state.homeCurrency, state.rates);
