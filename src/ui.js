@@ -90,6 +90,7 @@ export function renderApp(state, handlers) {
         ${filtered.map(exp => {
           const converted = convertCurrency(exp.amount, exp.currency, state.homeCurrency, state.rates);
           return `
+          
             <li class="expense-item" data-id="${exp.id}">
               <div class="exp-details">
                 <strong>${exp.description}</strong>
