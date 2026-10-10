@@ -38,6 +38,7 @@ class State {
       ...expenseData,
       amount: parseFloat(expenseData.amount)
     };
+
     // Spread operator creates a brand new array instead of mutating the existing one
     this.expenses = [...this.expenses, newExpense];
   }
