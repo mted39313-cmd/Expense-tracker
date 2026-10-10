@@ -14,6 +14,7 @@ export function renderApp(state, handlers) {
     return;
   }
 
+  
   // 2. Render Error State view with a retry action if fetch failed
   if (state.error) {
     appContainer.innerHTML = `
@@ -45,7 +46,7 @@ export function renderApp(state, handlers) {
       </div>
     </header>
 
-    
+
     <section class="form-section">
       <form id="expense-form">
         <input type="text" id="description" placeholder="Description (e.g. Coffee)" required />
