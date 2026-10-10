@@ -2,6 +2,7 @@
 
 A single-page web application designed for travelers, international freelancers, and online shoppers to log multi-currency expenses and instantly view totals in a chosen home currency using live exchange rates.
 
+
 ## Live Demo
 [View Live Site on GitHub Pages](https://mted39313-cmd.github.io/Expense-tracker/)
 
