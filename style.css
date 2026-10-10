@@ -1,10 +1,12 @@
-/* CSS Variables for consistent color theme */
+/* Color Palette: Deep Dark Purple & White Cyber Theme */
 :root {
-  --primary: #4f46e5;
-  --bg: #f8fafc;
-  --card-bg: #ffffff;
-  --text: #1e293b;
-  --border: #e2e8f0;
+  --primary: #c084fc;         /* Bright neon purple for buttons and highlights */
+  --primary-hover: #d8b4fe;   /* Lighter purple on hover */
+  --bg: #0b0714;              /* Deep, immersive dark night purple background */
+  --card-bg: #161026;         /* Rich dark purple card surface */
+  --text: #ffffff;            /* Crisp pure white for main text */
+  --text-muted: #d8b4fe;      /* Soft lavender for secondary text */
+  --border: #2e1a47;          /* Sleek dark purple borders */
 }
 
 body {
@@ -13,6 +15,7 @@ body {
   color: var(--text);
   margin: 0;
   padding: 2rem 1rem;
+  min-height: 100vh;
 }
 
 .container {
@@ -20,8 +23,9 @@ body {
   margin: 0 auto;
   background: var(--card-bg);
   padding: 2rem;
-  border-radius: 12px;
-  box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1);
+  border-radius: 16px;
+  box-shadow: 0 10px 30px -5px rgba(168, 85, 247, 0.2);
+  border: 1px solid var(--border);
 }
 
 .app-header {
@@ -33,6 +37,18 @@ body {
   margin-bottom: 1.5rem;
 }
 
+.app-header h1 {
+  color: var(--primary);
+  margin: 0;
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+
+.settings-bar label {
+  color: var(--text-muted);
+  font-size: 0.85rem;
+}
+
 .form-section form {
   display: grid;
   grid-template-columns: 2fr 1fr 1fr 1fr auto;
@@ -41,39 +57,76 @@ body {
 }
 
 input, select, button {
-  padding: 0.5rem;
+  padding: 0.6rem;
   border: 1px solid var(--border);
-  border-radius: 6px;
+  border-radius: 8px;
   font-size: 0.9rem;
+  background-color: #0f0a1a;
+  color: var(--text);
 }
 
-button {
+input::placeholder {
+  color: #6b7280;
+}
+
+input:focus, select:focus {
+  outline: 2px solid var(--primary);
+  border-color: transparent;
+}
+
+button[type="submit"] {
   background: var(--primary);
-  color: white;
+  color: #0b0714;
   border: none;
   cursor: pointer;
-  font-weight: 600;
+  font-weight: 700;
+  transition: background 0.2s, transform 0.1s;
 }
 
-button:hover {
-  opacity: 0.9;
+button[type="submit"]:hover {
+  background: var(--primary-hover);
+  transform: translateY(-1px);
 }
 
 .dashboard-section {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background: #f1f5f9;
-  padding: 1rem;
-  border-radius: 8px;
+  background: #1f1435; /* Slightly lighter purple contrast box */
+  padding: 1.2rem;
+  border-radius: 12px;
   margin-bottom: 1.5rem;
+  border: 1px solid var(--border);
+}
+
+.total-card h3 {
+  margin: 0 0 0.25rem 0;
+  color: var(--text-muted);
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
 }
 
 .total-amount {
-  font-size: 1.25rem;
-  font-weight: bold;
+  font-size: 1.4rem;
+  font-weight: 800;
   color: var(--primary);
   margin: 0;
+}
+
+.filter-bar label {
+  display: block;
+  font-size: 0.85rem;
+  margin-bottom: 0.25rem;
+  color: var(--text-muted);
+  font-weight: 500;
+}
+
+.list-section h2 {
+  font-size: 1.2rem;
+  color: var(--text);
+  border-bottom: 1px solid var(--border);
+  padding-bottom: 0.5rem;
 }
 
 .expense-item {
@@ -84,24 +137,76 @@ button:hover {
   border-bottom: 1px solid var(--border);
 }
 
+.exp-details {
+  display: flex;
+  align-items: center;
+}
+
+.exp-details strong {
+  color: var(--text);
+}
+
 .badge {
-  background: #e0e7ff;
+  background: #2e1a47;
   color: var(--primary);
-  padding: 0.2rem 0.5rem;
-  border-radius: 4px;
+  padding: 0.25rem 0.6rem;
+  border-radius: 6px;
   font-size: 0.75rem;
-  margin-left: 0.5rem;
+  margin-left: 0.75rem;
+  font-weight: 600;
+  border: 1px solid rgba(192, 132, 252, 0.2);
+}
+
+.exp-amounts {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.orig {
+  color: #9ca3af;
+  font-size: 0.85rem;
+}
+
+.conv {
+  font-weight: 600;
+  color: var(--text);
 }
 
 .delete-btn {
-  background: #ef4444;
+  background: #f43f5e; /* Vibrant crimson red for delete contrast */
   color: white;
   border-radius: 50%;
-  width: 24px;
-  height: 24px;
+  width: 26px;
+  height: 26px;
   display: inline-flex;
   align-items: center;
   justify-content: center;
   cursor: pointer;
-  margin-left: 1rem;
+  border: none;
+  font-weight: bold;
+  transition: background 0.2s;
+}
+
+.delete-btn:hover {
+  background: #e11d48;
+}
+
+.status-message {
+  text-align: center;
+  padding: 2rem;
+  color: var(--primary);
+  font-weight: 600;
+}
+
+.status-message.error {
+  color: #f43f5e;
+}
+
+.empty {
+  color: #9ca3af;
+  text-align: center;
+  padding: 1.5rem;
+  list-style: none;
+  font-style: italic;
 }
